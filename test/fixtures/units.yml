@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  unit: MyString
+  date_start: MyString
+  date_end: 2017-05-26
+  date_finish: 2017-05-26
+  id_author: 1
+  id_user: 1
+  complete: false
+  comment: MyText
+  sum_ur: 1
+  sum_fiz: 1
+  id_temp_task: 1
+
+two:
+  unit: MyString
+  date_start: MyString
+  date_end: 2017-05-26
+  date_finish: 2017-05-26
+  id_author: 1
+  id_user: 1
+  complete: false
+  comment: MyText
+  sum_ur: 1
+  sum_fiz: 1
+  id_temp_task: 1

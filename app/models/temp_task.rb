@@ -1,0 +1,2 @@
+class TempTask < ApplicationRecord
+end
