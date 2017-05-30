@@ -1,0 +1,35 @@
+<div class="container">
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Компания</th>
+				<th>Дата завершения</th>
+				<th>Инициатор</th>
+				<th>Исполнитель</th>
+				<th>Завершить</th>
+			</tr>
+		</thead>
+<tbody>
+<% @units.each do |unit| %>
+	<% if unit.date_end.month == Time.now.month %>
+  	<% @date_result = unit.date_end.day - Time.now.day %>
+ 	<% else %>
+  	<% @date_result = 3 %>
+<% end %>
+	<tr class=<%= color %>>
+		<td><%= link_to unit.unit, unit_path(unit) %></td>
+		<td><%= l unit.date_end, format: :long %></td>
+		<td><% unit.id_user %>
+		    <% @users.each do |user| %>
+		 <%= user.name if user.id == unit.id_user %>
+		<% end %></td>
+		<td><% unit.id_author %>
+		<% @authors.each do |author| %>
+		 <%= author.name if author.id == unit.id_author %>
+		<% end %></td>
+		<td><%= link_to "Завершить", "/units/new", :role => "btn", :class=> "btn btn-default" %></td>
+	</tr>
+<% end %>
+	</tbody>
+</table>
+</div>

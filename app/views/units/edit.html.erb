@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+	<div class="col-md-6"> 
+			<%= simple_form_for(@unit) do |f| %>
+			<%= f.input :unit %>
+			<%= f.input :date_start %>
+			<%= f.input :date_end %>
+			<%= f.input :id_task_temp %>
+			<%= f.input :id_author  %>
+			<%= f.input :id_user  %>
+			<%= f.button :submit %>
+			<% end %>
+		</div>
+	</div>
+</div>

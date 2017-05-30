@@ -1,0 +1,7 @@
+<div class="container">
+<% @users.each do |user| %>
+<button class="btn btn-primary" type="button">
+ <%= user.name %> <span class="badge"><%= "#{find_count(user)}" %></span>
+</button>
+<% end %>
+</div>
