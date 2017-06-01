@@ -6,7 +6,7 @@
 				<th>Дата завершения</th>
 				<th>Исполнитель</th>
 				<th>Инициатор</th>
-				<th>Завершить</th>
+				<th>Группа</th>
 			</tr>
 		</thead>
 <tbody>
@@ -27,7 +27,7 @@
 		<% @authors.each do |author| %>
 		 <%= link_to author.name, author_path(author) if author.id == unit.id_author %>
 		<% end %></td>
-		<td><%= link_to "Завершить", edit_unit_path(unit), :role => "btn", :class=> "btn btn-default" %></td>
+		<td><%= link_to unit.id_temp_task, unit_path(unit)  %></td>
 	</tr>
 <% end %>
 	</tbody>
