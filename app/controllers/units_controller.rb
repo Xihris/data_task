@@ -12,7 +12,16 @@ class UnitsController < ApplicationController
 
   def show
     @unit = Unit.find params[:id]
-    @authors = Author.all
+    # @authors = Author.all
+  end
+  
+  def complite
+    @unit = Unit.find params[:id]
+    if @unit.update(unit_params)
+      redirect_to units_path
+    else
+      render 'complite'
+    end
   end
 
   def index
@@ -23,7 +32,26 @@ class UnitsController < ApplicationController
     @users = User.all
     # @temps = TasksTemp.all
   end
-
-  def update
+  
+  def edit
+    @unit = Unit.find params[:id]
+  #   # @unit.update(unit_params)
+   
   end
+  
+  def update
+    @unit = Unit.find params[:id]
+    if @unit.update(unit_params)
+      redirect_to units_path
+    else
+      render 'edit'
+    end
+  end
+  
+   private
+   
+  def unit_params
+    params.require(:unit).permit(:unit, :date_start, :date_end, :date_finish, :id_author, :id_user, :complete, :comment, :sum_ur, :sum_fiz, :id_temp_task)
+  end
+  
 end

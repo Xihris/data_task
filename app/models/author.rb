@@ -1,3 +1,3 @@
 class Author < ApplicationRecord
-    has_many :users
+    # has_many :units
 end

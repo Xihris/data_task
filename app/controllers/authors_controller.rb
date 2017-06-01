@@ -10,6 +10,9 @@ class AuthorsController < ApplicationController
   end
 
   def show
+    @author = Author.find(params[:id])
+    @units = Unit.where("id_author = ""#{@author.id}")
+    @users = User.all
   end
 
   

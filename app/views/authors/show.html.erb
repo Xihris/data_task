@@ -1,2 +1,38 @@
-<h1>Authors#show</h1>
-<p>Find me in app/views/authors/show.html.erb</p>
+<div class="container">
+    <div class="row">
+    <div class="col-md-6">
+    <img src="<%= @author.photo %>" class="rounded float-right" alt="Аватарка">
+    </div>
+    <div class="col-md-6">
+    <p><%= @author.name %></p>
+    <p><%= @author.phone %></p>
+    <p><%= link_to @author.department, "#" %></p>
+    </div>
+    </div>
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Компания</th>
+				<th>Дата завершения</th>
+				<th>Исполнитель</th>
+			</tr>
+		</thead>
+<tbody>
+<% @units.each do |unit| %>
+	<% if unit.date_end.month == Time.now.month %>
+  	<% @date_result = unit.date_end.day - Time.now.day %>
+ 	<% else %>
+  	<% @date_result = 3 %>
+<% end %>
+	<tr class=<%= color %>>
+		<td><%= unit.unit %></td>
+		<td><%= l unit.date_end, format: :long %></td>
+		<td><% unit.id_user %>
+		<% @users.each do |user| %>
+		 <%= user.name if user.id == unit.id_user %>
+		<% end %></td>
+	</tr>
+<% end %>
+	</tbody>
+</table>
+</div>

@@ -1,2 +1,30 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Компания</th>
+				<th>Дата завершения</th>
+				<th>Инициатор</th>
+				<th>Завершить</th>
+			</tr>
+		</thead>
+<tbody>
+<% @units.each do |unit| %>
+	<% if unit.date_end.month == Time.now.month %>
+  	<% @date_result = unit.date_end.day - Time.now.day %>
+ 	<% else %>
+  	<% @date_result = 3 %>
+<% end %>
+	<tr class=<%= color %>>
+		<td><%= unit.unit %></td>
+		<td><%= l unit.date_end, format: :long %></td>
+		<td><% unit.id_author %>
+		<% @authors.each do |author| %>
+		 <%= link_to author.name, author_path(author) if author.id == unit.id_author %>
+		<% end %></td>
+		<td><%= link_to "Завершить", "/unit", :role => "btn", :class=> "btn btn-default" %></td>
+	</tr>
+<% end %>
+	</tbody>
+</table>
+</div>

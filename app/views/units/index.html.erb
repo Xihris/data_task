@@ -4,8 +4,8 @@
 			<tr>
 				<th>Компания</th>
 				<th>Дата завершения</th>
-				<th>Инициатор</th>
 				<th>Исполнитель</th>
+				<th>Инициатор</th>
 				<th>Завершить</th>
 			</tr>
 		</thead>
@@ -17,17 +17,17 @@
   	<% @date_result = 3 %>
 <% end %>
 	<tr class=<%= color %>>
-		<td><%= link_to unit.unit, unit_path(unit) %></td>
+		<td><%= link_to unit.unit, edit_unit_path(unit) %></td>
 		<td><%= l unit.date_end, format: :long %></td>
 		<td><% unit.id_user %>
 		    <% @users.each do |user| %>
-		 <%= user.name if user.id == unit.id_user %>
+		 <%= link_to user.name, user_path(user) if user.id == unit.id_user %>
 		<% end %></td>
 		<td><% unit.id_author %>
 		<% @authors.each do |author| %>
-		 <%= author.name if author.id == unit.id_author %>
+		 <%= link_to author.name, author_path(author) if author.id == unit.id_author %>
 		<% end %></td>
-		<td><%= link_to "Завершить", "/units/new", :role => "btn", :class=> "btn btn-default" %></td>
+		<td><%= link_to "Завершить", edit_unit_path(unit), :role => "btn", :class=> "btn btn-default" %></td>
 	</tr>
 <% end %>
 	</tbody>
