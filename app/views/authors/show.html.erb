@@ -27,10 +27,7 @@
 	<tr class=<%= color %>>
 		<td><%= unit.unit %></td>
 		<td><%= l unit.date_end, format: :long %></td>
-		<td><% unit.id_user %>
-		<% @users.each do |user| %>
-		 <%= user.name if user.id == unit.id_user %>
-		<% end %></td>
+		<td><%= unit.user.name %></td>
 	</tr>
 <% end %>
 	</tbody>

@@ -5,8 +5,8 @@
 			<%= f.input :unit %>
 			<%= f.input :date_start %>
 			<%= f.input :date_end %>
-			<%= f.input :id_author  %>
-			<%= f.input :id_user  %>
+			<%= f.select :author_id, Author.all.map{ |l| [l.name, l.id] }  %>
+			<%= f.select :user_id, User.all.map{ |l| [l.name, l.id] }  %>
 			<%= f.button :submit %>
 			<% end %>
 		</div>

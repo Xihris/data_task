@@ -18,9 +18,9 @@
 	<tr class=<%= color %>>
 		<td><%= unit.unit %></td>
 		<td><%= l unit.date_end, format: :long %></td>
-		<td><% unit.id_author %>
+		<td><% unit.author_id %>
 		<% @authors.each do |author| %>
-		 <%= link_to author.name, author_path(author) if author.id == unit.id_author %>
+		 <%= link_to author.name, author_path(author) if author.id == unit.author_id %>
 		<% end %></td>
 		<td><%= link_to "Завершить", "/unit", :role => "btn", :class=> "btn btn-default" %></td>
 	</tr>

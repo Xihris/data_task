@@ -4,7 +4,7 @@ class CreateTempTasks < ActiveRecord::Migration[5.1]
       t.text :companys
       t.date :date_start
       t.date :date_end
-      t.integer :id_author
+      t.integer :author_id
 
       t.timestamps
     end

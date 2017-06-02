@@ -5,9 +5,9 @@ class CreateUnits < ActiveRecord::Migration[5.1]
       t.string :date_start
       t.date :date_end
       t.date :date_finish
-      t.integer :id_author
-      t.integer :id_user
-      t.boolean :complete
+      t.integer :author_id
+      t.integer :user_id
+      t.boolean :complete, default: false
       t.text :comment
       t.integer :sum_ur
       t.integer :sum_fiz
