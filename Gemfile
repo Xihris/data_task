@@ -42,6 +42,7 @@ gem 'simple_form'
 gem 'russian'
 
 
+
 group :production do
   gem 'pg'
 end

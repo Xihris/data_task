@@ -12,7 +12,6 @@ class UnitsController < ApplicationController
 
   def show
     @unit = Unit.find params[:id]
-    # @authors = Author.all
   end
   
   def complite
@@ -30,8 +29,10 @@ class UnitsController < ApplicationController
   
   def edit
     @unit = Unit.find params[:id]
-  #   # @unit.update(unit_params)
-   
+  end
+  
+  def group
+    @units = Unit.where(id_temp_task: params[:id])
   end
   
   def update

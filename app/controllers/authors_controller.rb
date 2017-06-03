@@ -12,7 +12,6 @@ class AuthorsController < ApplicationController
   def show
     @author = Author.find(params[:id])
     @units = Unit.where("author_id = ""#{@author.id}")
-    @users = User.all
   end
 
   

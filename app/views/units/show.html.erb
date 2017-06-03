@@ -1,9 +1,6 @@
 <div class="container">
 <%= @unit.unit %>
 <%= l @unit.date_end, format: :long %>
-<% @unit.author_id %>
-<% @authors.each do |author| %>
-<%= author.name if author.id == @unit.author_id %>
-<% end %>
+<%= @unit.author.name, author_path(unit.author_id) %>
 <%= link_to 'Edit', edit_unit_path(@unit) %>
 </div>
