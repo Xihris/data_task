@@ -5,8 +5,12 @@
 			<%= f.input :unit %>
 			<%= f.input :date_start %>
 			<%= f.input :date_end %>
-			<%= f.select :author_id, Author.all.map{ |l| [l.name, l.id] }  %>
-			<%= f.select :user_id, User.all.map{ |l| [l.name, l.id] }  %>
+			<%= f.input :author_id, label: 'Author' do %>
+        	<%= f.select :author_id, Author.all.map{ |author| [author.name, author.id] }, {:placeholder => ""}, {:class => 'form-control'} %>
+        	<% end %>
+        	<%= f.input :user_id, label: 'User' do %>
+			<%= f.select :user_id, User.all.map{ |user| [user.name, user.id] }, {:placeholder => ""}, {:class => 'form-control'} %>
+			<% end %>
 			<%= f.button :submit %>
 			<% end %>
 		</div>

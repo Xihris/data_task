@@ -22,9 +22,14 @@ class UnitsController < ApplicationController
       render 'complite'
     end
   end
+  
+  # def search
+  #   @search = Unit.where('unit = ?', params[:search])
+  # end
 
   def index
     @units = Unit.where(complete: false).order(:date_end)
+    @users = User.all
   end
   
   def edit
@@ -33,6 +38,10 @@ class UnitsController < ApplicationController
   
   def group
     @units = Unit.where(id_temp_task: params[:id])
+  end
+  
+  def complite
+    @unit = Unit.find params[:id]
   end
   
   def update

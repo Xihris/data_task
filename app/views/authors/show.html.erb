@@ -4,9 +4,9 @@
     <img src="<%= @author.photo %>" class="rounded float-right" alt="Аватарка">
     </div>
     <div class="col-md-6">
-    <p><%= @author.name %></p>
+    <p><%= link_to @author.name, edit_author_path %></p>
     <p><%= @author.phone %></p>
-    <p><%= link_to @author.department, "#" %></p>
+    <p><%= link_to @author.department, authors_department_path(@author) %></p>
     </div>
     </div>
 	<table class="table table-condensed">

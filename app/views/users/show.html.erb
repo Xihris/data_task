@@ -19,7 +19,7 @@
 		<td><%= unit.unit %></td>
 		<td><%= l unit.date_end, format: :long %></td>
 		<td><%= link_to unit.author.name, author_path(unit.author_id) %></td>
-		<td><%= link_to "Завершить", "/unit", :role => "btn", :class=> "btn btn-default" %></td>
+		<td><%= link_to "Завершить", units_complite_path(unit.id), :role => "btn", :class=> "btn btn-default" %></td>
 	</tr>
 <% end %>
 	</tbody>
