@@ -64,6 +64,6 @@ class UnitsController < ApplicationController
   end
   
   def search_params
-    params.require(:search).permit(:unit, :date_end, :user_id, :term, :comment, :sum_ur, :sum_fiz, :id_temp_task)
+    params.require(:search).permit(:unit, :date_end, :author_id, :user_id, :term, :comment, :sum_ur, :sum_fiz, :id_temp_task)
   end
 end
