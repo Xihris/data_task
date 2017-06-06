@@ -1,0 +1,28 @@
+<div class='container'>
+<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Компания</th>
+				<th>Дата завершения</th>
+				<th>Комментарий</th>
+				<th>Количество Юриков</th>
+				<th>Количество Физиков</th>
+				<th>Исполнитель</th>
+				<th>Группа</th>
+			</tr>
+		</thead>
+<tbody>
+    <% @searchs.each do |search| %>
+    	<td><%= search.unit %></td>
+		<td><%= l search.date_end, format: :long %></td>
+		<td><%= search.comment %></td>
+		<td><%= search.sum_ur %></td>
+		<td><%= search.sum_fiz %></td>
+		<td><%= search.user.name %></td>
+		<td><%= search.id_temp_task %></td>
+	</tr>
+<% end %>
+	</tbody>
+</table>
+</div>
+ </div>

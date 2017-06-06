@@ -13,42 +13,25 @@
   <body>
   <nav class="navbar navbar-default">
         <div class="container-fluid">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
           <div class="navbar-collapse collapse navbar-responsive-collapse">
-          
-        <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Компания">
-        </div>
-        <button type="submit" class="btn btn-default">Поиск</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
+            <div class="form-group">
+              <%= form_tag(units_search_path, method: :get, class: "navbar-form navbar-left") do %>
+              <%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Компания" %>
+              <%= submit_tag 'Поиск', class: "btn btn-default" %>
+              <% end %>
+        <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Домой</a></li>
         <li><a href="/users/sign_in">Войти</a></li>
-        <!--<li class="dropdown">-->
-        <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
-        <!--  <ul class="dropdown-menu">-->
-        <!--    <li><a href="#">Action</a></li>-->
-        <!--    <li><a href="#">Another action</a></li>-->
-        <!--    <li><a href="#">Something else here</a></li>-->
-        <!--    <li role="separator" class="divider"></li>-->
-        <!--    <li><a href="#">Separated link</a></li>-->
-          </ul>
-        </li>
-      </ul>
+        </ul>
         </div>
-      </div>
+       </div>
     </div>
     
     </nav>
 
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-10">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>  
@@ -56,7 +39,7 @@
     </div><!--/row-->
 
       <footer>
-        <p>&copy; Xihris 2017</p>
+       <p>&copy; Xihris 2017</p>
       </footer>
 
 <!--     </div> /container

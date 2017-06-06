@@ -23,9 +23,13 @@ class UnitsController < ApplicationController
     end
   end
   
-  # def search
-  #   @search = Unit.where('unit = ?', params[:search])
-  # end
+  def search
+    @searchs = if params[:term]
+      Unit.where('unit LIKE ?', "%#{params[:term]}%")
+    else
+      Unit.all
+    end
+  end
 
   def index
     @units = Unit.where(complete: false).order(:date_end)
@@ -59,4 +63,7 @@ class UnitsController < ApplicationController
     params.require(:unit).permit(:unit, :date_start, :date_end, :date_finish, :author_id, :user_id, :complete, :comment, :sum_ur, :sum_fiz, :id_temp_task)
   end
   
+  def search_params
+    params.require(:search).permit(:unit, :date_end, :user_id, :term, :comment, :sum_ur, :sum_fiz, :id_temp_task)
+  end
 end

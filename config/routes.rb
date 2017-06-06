@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root 'units#index'
   get 'units/group/:id' => 'units#group', as: :units_group
-  post 'units/search' => 'units#search', as: :units_search
+  get 'units/search' => 'units#search', as: :units_search
   get 'units/complite/:id' => 'units#complite', as: :units_complite
   get 'authors/department/:id' => 'authors#department', as: :authors_department
   
