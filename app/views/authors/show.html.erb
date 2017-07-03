@@ -19,11 +19,10 @@
 		</thead>
 <tbody>
 <% @units.each do |unit| %>
-	<% if unit.date_end.month == Time.now.month %>
-  	<% @date_result = unit.date_end.day - Time.now.day %>
- 	<% else %>
-  	<% @date_result = 3 %>
-<% end %>
+	
+	<% @date_result = (unit.date_end - Date.today).to_i %>
+  		
+	
 	<tr class=<%= color %>>
 		<td><%= unit.unit %></td>
 		<td><%= l unit.date_end, format: :long %></td>

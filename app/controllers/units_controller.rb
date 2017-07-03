@@ -34,6 +34,7 @@ class UnitsController < ApplicationController
   def index
     @units = Unit.where(complete: false).order(:date_end)
     @users = User.all
+    
   end
   
   def edit
@@ -56,6 +57,9 @@ class UnitsController < ApplicationController
       render 'edit'
     end
   end
+  
+  
+
   
    private
    
